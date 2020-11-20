@@ -1,0 +1,102 @@
+Metadata-Version: 2.1
+Name: stable-baselines
+Version: 2.10.1
+Summary: A fork of OpenAI Baselines, implementations of reinforcement learning algorithms.
+Home-page: https://github.com/hill-a/stable-baselines
+Author: Ashley Hill
+Author-email: ashley.hill@u-psud.fr
+License: MIT
+Keywords: reinforcement-learning-algorithms reinforcement-learning machine-learning gym openai baselines toolbox python data-science
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: gym[atari,classic_control] (>=0.11)
+Requires-Dist: scipy
+Requires-Dist: joblib
+Requires-Dist: cloudpickle (>=0.5.5)
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-autobuild ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Provides-Extra: mpi
+Requires-Dist: mpi4py ; extra == 'mpi'
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-cov ; extra == 'tests'
+Requires-Dist: pytest-env ; extra == 'tests'
+Requires-Dist: pytest-xdist ; extra == 'tests'
+Requires-Dist: pytype ; extra == 'tests'
+
+
+[![Build Status](https://travis-ci.com/hill-a/stable-baselines.svg?branch=master)](https://travis-ci.com/hill-a/stable-baselines) [![Documentation Status](https://readthedocs.org/projects/stable-baselines/badge/?version=master)](https://stable-baselines.readthedocs.io/en/master/?badge=master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3bcb4cd6d76a4270acb16b5fe6dd9efa)](https://www.codacy.com/app/baselines_janitors/stable-baselines?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hill-a/stable-baselines&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/3bcb4cd6d76a4270acb16b5fe6dd9efa)](https://www.codacy.com/app/baselines_janitors/stable-baselines?utm_source=github.com&utm_medium=referral&utm_content=hill-a/stable-baselines&utm_campaign=Badge_Coverage)
+
+# Stable Baselines
+
+Stable Baselines is a set of improved implementations of reinforcement learning algorithms based on OpenAI [Baselines](https://github.com/openai/baselines/).
+
+These algorithms will make it easier for the research community and industry to replicate, refine, and identify new ideas, and will create good baselines to build projects on top of. We expect these tools will be used as a base around which new ideas can be added, and as a tool for comparing a new approach against existing ones. We also hope that the simplicity of these tools will allow beginners to experiment with a more advanced toolset, without being buried in implementation details.
+
+## Main differences with OpenAI Baselines
+This toolset is a fork of OpenAI Baselines, with a major structural refactoring, and code cleanups:
+
+-   Unified structure for all algorithms
+-   PEP8 compliant (unified code style)
+-   Documented functions and classes
+-   More tests & more code coverage
+-   Additional algorithms: SAC and TD3 (+ HER support for DQN, DDPG, SAC and TD3)
+
+## Links
+
+Repository:
+https://github.com/hill-a/stable-baselines
+
+Medium article:
+https://medium.com/@araffin/df87c4b2fc82
+
+Documentation:
+https://stable-baselines.readthedocs.io/en/master/
+
+RL Baselines Zoo:
+https://github.com/araffin/rl-baselines-zoo
+
+## Quick example
+
+Most of the library tries to follow a sklearn-like syntax for the Reinforcement Learning algorithms using Gym.
+
+Here is a quick example of how to train and run PPO2 on a cartpole environment:
+
+```python
+import gym
+
+from stable_baselines.common.policies import MlpPolicy
+from stable_baselines.common.vec_env import DummyVecEnv
+from stable_baselines import PPO2
+
+env = gym.make('CartPole-v1')
+# Optional: PPO2 requires a vectorized environment to run
+# the env is now wrapped automatically when passing it to the constructor
+# env = DummyVecEnv([lambda: env])
+
+model = PPO2(MlpPolicy, env, verbose=1)
+model.learn(total_timesteps=10000)
+
+obs = env.reset()
+for i in range(1000):
+    action, _states = model.predict(obs)
+    obs, rewards, dones, info = env.step(action)
+    env.render()
+```
+
+Or just train a model with a one liner if [the environment is registered in Gym](https://github.com/openai/gym/wiki/Environments) and if [the policy is registered](https://stable-baselines.readthedocs.io/en/master/guide/custom_policy.html):
+
+```python
+from stable_baselines import PPO2
+
+model = PPO2('MlpPolicy', 'CartPole-v1').learn(10000)
+```
+
+
+

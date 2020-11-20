@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<robot name="test_robot">
+
+
+  <link name="base_link">
+  </link>
+
+
+  <link name="body">
+    <visual>
+      <origin xyz="0 0.050 0" rpy="0 1.57 3.1415" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\Body.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0.050 0" rpy="0 1.57 3.1415" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\Body.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0.050 0" rpy="0 1.57 3.1415" />
+      <mass value="3"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+
+  <link name="right_lr_motor_axis">
+   <visual>
+      <origin xyz="0 -0.033 0.055" rpy="0 0.01 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\motor_connection.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.033 0.055" rpy="0 0.01 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\motor_connection.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.033 0.055" rpy="0 0.01 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+
+  <link name="right_moter_leg" >
+    <visual>
+      <origin xyz="0 -0.012 -0.014" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\frontmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.012 -0.014" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\frontmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.012 -0.014" rpy="0 1.57 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name = "right_front_moter_leg">
+    <visual>
+      <origin xyz="0 -0.015 -0.009" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\backmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.015 -0.009" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\backmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.015 -0.009" rpy="0 1.57 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name = "right_small_leg">
+    <visual>
+      <origin xyz="0 -0.011 -0.019" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\leg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.011 -0.019" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\leg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.011 -0.019" rpy="0 1.57 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+
+  <link name="right_long_leg">
+    <visual>
+       <origin xyz="-0.003 0 -0.05" rpy="3.14 0 1.57" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\longleg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.003 0 -0.05" rpy="3.14 0 1.57" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\longleg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.003 0 -0.05" rpy="3.14 0 1.57" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name = "right_long_leg_mid">
+
+  </link>
+
+
+  <link name="right_foot">
+    <visual>
+      <origin xyz="0 -0.05 -0.043" rpy="0.5236  0 0" />
+      <geometry>
+         <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\footsingle.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.05 -0.043" rpy="0.5236  0 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\footsingle.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.05 -0.043" rpy="0.5236  0 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name="left_lr_motor_axis" >
+    <visual>
+      <origin xyz="0 -0.033 0.055" rpy="0 0.01 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\motor_connection.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.033 0.055" rpy="0 0.01 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\motor_connection.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.033 0.055" rpy="0 0.01 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+
+  <link name="left_moter_leg">
+  <visual>
+      <origin xyz="0 -0.012 -0.014" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\frontmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.012 -0.014" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\frontmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.012 -0.014" rpy="0 1.57 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name = "left_front_moter_leg">
+    <visual>
+      <origin xyz="0 -0.015 -0.009" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\backmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.015 -0.009" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\backmotorbracket.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.015 -0.009" rpy="0 1.57 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name = "left_small_leg">
+    <visual>
+      <origin xyz="0 -0.011 -0.019" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\leg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.011 -0.019" rpy="0 1.57 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\leg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 -0.011 -0.019" rpy="0 1.57 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name="left_long_leg">
+    <visual>
+      <origin xyz="-0.003 0 -0.05" rpy="3.14 0 1.57" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\longleg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.003 0 -0.05" rpy="3.14 0 1.57" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\longleg.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.003 0 -0.05" rpy="3.14 0 1.57" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name = "left_long_leg_mid">
+    
+  </link>
+
+
+  <link name="left_foot">
+    <visual>
+      <origin xyz="0 -0.05 -0.043" rpy="0.5236  0 0" />
+      <geometry>
+         <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\footsingle.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.05 -0.043" rpy="0.5236  0 0" />
+      <geometry>
+        <mesh filename="C:/Users\Lorne\PycharmProjects\Simulation\stl\footsingle.stl" scale = "0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+      <inertial>
+      <origin xyz="0 -0.05 -0.043" rpy="0.5236  0 0" />
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+
+
+  <joint name="base_link_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="body"/>
+    <origin xyz = "0 0 0"/>
+  </joint>
+
+  <joint name="right_lr_motor_joint" type="revolute">
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="body"/>
+    <child link="right_lr_motor_axis"/>
+    <origin xyz = "0.0659 0 -0.05"/>
+  </joint>
+
+  <joint name="right_leg_motor_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="right_lr_motor_axis"/>
+    <child link="right_moter_leg"/>
+    <origin xyz = "0 0.04 -0.03"/>
+  </joint>
+
+
+
+
+  <joint name="right_leg_front_motor_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="right_lr_motor_axis"/>
+    <child link="right_front_moter_leg"/>
+    <origin xyz = "0 -0.04 -0.03"/>
+  </joint>
+
+  <joint name="right_leg_front_motor_to_small_leg_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="right_front_moter_leg"/>
+    <child link="right_small_leg"/>
+    <origin xyz = "0 0 -0.03"/>
+  </joint>
+
+
+
+
+
+
+  <joint name="right_leg_to_long_leg_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="right_moter_leg"/>
+    <child link="right_long_leg"/>
+    <origin xyz = "0 0 -0.0460"/>  </joint>
+
+      <joint name="right_long_leg_to_leg_mid_joint" type="fixed">
+    <parent link="right_long_leg"/>
+    <child link="right_long_leg_mid"/>
+    <origin xyz = "0 0 -0.04"/>  
+  </joint>
+
+  <joint name="right_foot_joint" type="fixed">
+    <parent link="right_long_leg_mid"/>
+    <child link="right_foot"/>
+    <origin xyz = "0 0 -0.0604"/>
+  </joint>
+
+
+
+
+
+
+  <joint name="left_lr_motor_joint" type="revolute">
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="body"/>
+    <child link="left_lr_motor_axis"/>
+    <origin xyz = "-0.0659 0 -0.05"/>
+  </joint>
+
+
+  <joint name="left_leg_motor_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="left_lr_motor_axis"/>
+    <child link="left_moter_leg"/>
+    <origin xyz = "0 0.04 -0.03"/>
+  </joint>
+
+
+
+  <joint name="left_leg_front_motor_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="left_lr_motor_axis"/>
+    <child link="left_front_moter_leg"/>
+    <origin xyz = "0 -0.04 -0.03"/>
+  </joint>
+
+  <joint name="left_leg_front_motor_to_small_leg_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="left_front_moter_leg"/>
+    <child link="left_small_leg"/>
+    <origin xyz = "0 0 -0.03"/>
+  </joint>
+
+
+
+
+  <joint name="left_leg_to_long_leg_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="100"/>
+    <parent link="left_moter_leg"/>
+    <child link="left_long_leg"/>
+    <origin xyz = "0 0 -0.0460"/>
+  </joint>
+
+  <joint name="left_long_leg_to_leg_mid_joint" type="fixed">
+    <parent link="left_long_leg"/>
+    <child link="left_long_leg_mid"/>
+    <origin xyz = "0 0 -0.0400"/>  
+  </joint>
+
+  <joint name="left_foot_joint" type="fixed">
+    <parent link="left_long_leg_mid"/>
+    <child link="left_foot"/>
+    <origin xyz = "0 0 -0.0604"/>
+  </joint>
+
+</robot>
