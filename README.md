@@ -1,4 +1,4 @@
-# Jumpfrog is an ongoing personal robotics project.
+# Jump Frog is an ongoing personal robotics project.
 The robot is driven by six LX-16A bus servos and controlled remotely through Raspberry Pi. 
 <br/>The control system is based on ROS,
 and two different control strategies (sin wave motor control and reinforment learning) is tried on the robot.
